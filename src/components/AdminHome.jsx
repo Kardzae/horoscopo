@@ -1,4 +1,4 @@
-import { Navigate } from "react-router-dom";
+import { Navigate, useNavigate } from "react-router-dom";
 import './styles/AdminHome.css'
 import { useState } from "react";
 
@@ -6,7 +6,7 @@ function AdminHome({user}){
     if(user!=='admin' || !user){
         return <Navigate to="/"/>
     }
-
+    const home = useNavigate();
     const [textoEditar, setTextoEditar] = useState("");
     const [signoEditar, setSignoEditar] = useState("");
 
@@ -15,6 +15,10 @@ function AdminHome({user}){
         if(signo!=="0"){
             setSignoEditar(signo);
         } 
+    }
+
+    function goHome(){
+        home("/");
     }
 
     function handleClick(e){
@@ -49,6 +53,7 @@ function AdminHome({user}){
 
             </textarea>
             <button id="btnEditar" onClick={handleClick}>Editar</button>
+            <button id="btnHomeAdmin" onClick={goHome}>Home</button>
         </div>
     )
 }

@@ -34,3 +34,13 @@
     background-color: rgb(95, 82, 82);
     color: white;
 }
+
+#btnHomeAdmin{
+    margin-top: 15px;
+    padding: 5px;
+    padding-left: 15px;
+    padding-right: 15px;
+    border-radius: 10px;
+    background-color: blue;
+    color: white
+}
